@@ -1,0 +1,14 @@
+---
+- name: Install htop utility
+  hosts: 192.168.88.244
+  become: true
+  tasks:
+  - name: get htop 
+    apt:
+      name: htop
+      state: installed
+    become: yes
+
+  - name: enable htop
+    command: systemctl restart htop
+    become: yes
