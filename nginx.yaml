@@ -4,7 +4,7 @@
   become: true
   tasks:
     - name: Update the system
-      command: apt update && apt upgrade        
+      command: apt update && apt upgrade -y        
     - name: Install Nginx
       apt:
         name: Nginx
