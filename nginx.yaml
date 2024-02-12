@@ -6,17 +6,17 @@
     - name: Update the system
       apt:
         update_cache: yes
-        become: true
+      become: yes
 
     - name: Install Nginx
       apt:
         name: Nginx
         state: present
-        become: true
+      become: yes
 
     - name: enable nginx
       systemd:
         name: nginx
         enabled: yes
         state: started
-        become: true
+      become: yes
