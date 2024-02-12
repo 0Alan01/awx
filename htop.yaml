@@ -6,7 +6,7 @@
   - name: get htop 
     apt:
       name: htop
-      state: installed
+      state: present
     become: yes
 
   - name: enable htop
