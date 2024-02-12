@@ -1,6 +1,6 @@
 ---
 - name: Create a file using Ansible
-  hosts: all
+  hosts: 192.168.88.244
   become: true
 
   tasks:
