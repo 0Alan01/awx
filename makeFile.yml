@@ -1,10 +1,10 @@
 ---
 - name: Create a file using Ansible
-  hosts: 192.168.88.216
+  hosts: all
   become: true
 
   tasks:
     - name: Create a file
       ansible.builtin.file:
-        path: /home/awx.txt
+        path: /home/awx_edit.txt
         state: touch
