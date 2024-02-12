@@ -10,8 +10,6 @@
       become: yes
 
     - name: enable nginx
-      systemd:
-        name: nginx
-        enabled: yes
-        state: started
+      command: systemctl enable nginx
+      command: systemctl start nginx
       become: yes
