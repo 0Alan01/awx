@@ -6,5 +6,5 @@
   tasks:
     - name: Create a file
       ansible.builtin.file:
-        path: /home/awx_edit.txt
+        path: /home/fintech/awx_edit.txt
         state: touch
