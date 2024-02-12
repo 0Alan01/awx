@@ -1,1 +1,23 @@
+---
+- name: Install Nginx
+  hosts: 192.168.88.244
+  become: true
+  tasks:
+    - name: Update the system
+      apt:
+        update_cache: yes
+    - name: Upgrade the system
+      apt: 
+        upgrade: dist
+        autoremove: yes
 
+    - name: Install Nginx
+      apt:
+        name: Nginx
+        state: present
+
+    - name: enable nginx
+      systemd:
+        name: nginx
+        enabled: yes
+        state: started
