@@ -5,4 +5,4 @@
   become_user: root
   tasks:
     - name: Update repository cache
-      command: apt-get update >> /root/update_output.txt
+      command: apt update >> /root/update_output.txt
