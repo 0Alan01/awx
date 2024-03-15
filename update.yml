@@ -5,16 +5,31 @@
   become_user: root
   gather_facts: true
   tasks:
+    - name: Creating a directory for storing the log of update command 
+      file:
+        path: /var/log/update_log
+        state: directory
+      become: yes
+        
     - name: Update repository cache
       command: sudo apt update
       register: apt_output
       args:
         warn: false
     
-    - name: Document output
+    - name: Storing the stdout or stderr in /var/log with date and time.
       copy:
         content: "{{ apt_output.stdout | default('') }}{{ apt_output.stderr | default('') }}"
-        dest: "/var/log/apt/{{ inventory_hostname }}_{{ lookup('pipe', 'date +%Y-%m-%d_%H:%M:%S') }}_output.txt"
+        dest: "/var/log/update_log/{{ inventory_hostname }}_{{ lookup('pipe', 'date +%Y-%m-%d_%H:%M:%S') }}_output.txt"
+      become: yes
+
+    - name: rsync the log folder to the ansible master server.
+      synchronize:
+        src: /var/log/update_log
+        dest: /home/fintech/update_log
+        recursive: yes
+        delete: no
+      delegate_to: localhost
 
 
 
