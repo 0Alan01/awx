@@ -1,6 +1,6 @@
 ---
 - name: Update repository cache on Ubuntu servers
-  hosts: "{{ hostname }}"
+  hosts: 192.168.88.248
   become: yes  # This allows the playbook to run with sudo privileges
   become_user: root
   tasks:
