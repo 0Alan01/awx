@@ -14,7 +14,7 @@
     - name: Document output
       copy:
         content: "{{ apt_output.stdout | default('') }}{{ apt_output.stderr | default('') }}"
-        dest: "/root/{{ lookup('pipe', 'date +%Y-%m-%d_%H:%M:%S') }}_output.txt"
+        dest: "/root/{{ inventory_hostname }}_{{ lookup('pipe', 'date +%Y-%m-%d_%H:%M:%S') }}_output.txt"
 
 
 
