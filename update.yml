@@ -1,0 +1,9 @@
+---
+- name: Update repository cache on Ubuntu servers
+  hosts: {{ hostname }}
+  become: yes  # This allows the playbook to run with sudo privileges
+  become_user: root
+  tasks:
+    - name: Update repository cache
+      apt:
+        update_cache: yes
