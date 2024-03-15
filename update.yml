@@ -8,3 +8,8 @@
       apt:
         update_cache: yes
       register: /root/apt_output.txt
+ 
+   - name: Document output
+      copy:
+        content: "{{ apt_output.stdout }}"
+        dest: /root/apt_output.txt
