@@ -29,7 +29,7 @@
         dest: /home/fintech/update_log
         recursive: yes
         delete: no
-      delegate_to: 192.168.88.248
+      delegate_to: 192.168.88.244
       become: yes
 
 
