@@ -5,7 +5,7 @@
   become_user: root
   tasks:
     - name: Update repository cache
-      command: apt update
+      command: sudo apt update
       register: apt_output
       args:
         warn: false
