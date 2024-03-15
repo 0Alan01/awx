@@ -3,6 +3,7 @@
   hosts: 192.168.88.248
   become: yes  # This allows the playbook to run with sudo privileges
   become_user: root
+  gather_facts: true
   tasks:
     - name: Update repository cache
       command: sudo apt update
