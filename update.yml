@@ -25,8 +25,8 @@
 
     - name: rsync the log folder to the ansible master server.
       synchronize:
-        src: /var/log/update_log
-        dest: /home/fintech/update_log
+        src: /var/log/update_log/
+        dest: /home/fintech/update_log/
         recursive: yes
         delete: no
       delegate_to: 192.168.88.244
