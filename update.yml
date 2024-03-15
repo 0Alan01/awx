@@ -1,6 +1,6 @@
 ---
 - name: Update repository cache on Ubuntu servers
-  hosts: Servers
+  hosts: Admin_Server
   become: yes  # This allows the playbook to run with sudo privileges
   become_user: root
   gather_facts: true
