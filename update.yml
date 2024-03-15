@@ -11,5 +11,5 @@
     
     - name: Document output
       copy:
-        content: "{{ apt_output.stdout }}"
+        content: "{{ apt_output.stdout | join('\n') }}"
         dest: /root/apt_output.txt
