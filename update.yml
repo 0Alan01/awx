@@ -27,10 +27,6 @@
       fetch:
         src: /var/log/update_log/Admin_Server_2024-03-18_11:19:49_output.txt
         dest: /home/fintech/update_log/
-        flat: yes
-        force: no
-      become: yes
-
 
 
 
