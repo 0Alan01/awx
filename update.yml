@@ -29,6 +29,7 @@
         dest: /home/fintech/update_log/
         flat: no
         force: no
+      become: yes
 
 
 
