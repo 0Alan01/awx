@@ -24,12 +24,11 @@
       become: yes
 
     - name: rsync the log folder to the ansible master server.
-      synchronize:
-        src: /var/log/update_log/
-        dest: /home/fintech/update_log/
-        mode: pull
-      become: yes
-
+      fetch:
+        src: /var/log/update_log
+        dest: /home/fintech/update_log
+        flat: no
+        force: no
 
 
 
