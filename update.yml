@@ -25,7 +25,7 @@
 
     - name: rsync the log folder to the ansible master server.
       fetch:
-        src: /var/log/update_log
+        src: /var/log/update_log/*.txt
         dest: /home/fintech/update_log
         flat: no
         force: no
