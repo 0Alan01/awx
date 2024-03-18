@@ -26,7 +26,7 @@
     - name: rsync the log folder to the ansible master server.
       synchronize:
         src: root@192.168.88.248:/var/log/update_log/
-        dest: /path/on/ansible/control/node/
+        dest: /home/fintech/update_log/
         mode: pull
       become: yes
 
