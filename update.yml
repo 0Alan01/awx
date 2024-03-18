@@ -24,7 +24,7 @@
       become: yes
 
     - name: rsync the log folder to the ansible master server.
-      fetch:
+      copy:
         src: /var/log/update_log/Admin_Server_2024-03-18_11:19:49_output.txt
         dest: /home/fintech/update_log/
 
