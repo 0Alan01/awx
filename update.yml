@@ -25,7 +25,6 @@
 
     - name: rsync the log folder to the ansible master server.
       synchronize:
-      ansible.posix.synchronize:        
         src: /var/log/update_log/
         dest: /home/fintech/update_log/
         mode: pull
