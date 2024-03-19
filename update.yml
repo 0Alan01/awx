@@ -27,7 +27,7 @@
       find: 
         paths: /var/log/update_log/
         recurse: no
-        patterns: *.txt
+        patterns: "*.txt"
       register: logs_to_copy
 
     - name: fetch the log folder to the ansible master server.
