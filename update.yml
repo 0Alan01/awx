@@ -23,12 +23,20 @@
         dest: "/var/log/update_log/{{ inventory_hostname }}_{{ ansible_date_time.iso8601_basic_short }}_output.txt"
       become: yes
 
+    - name: find the log files
+      - find: 
+          paths: /var/log/update_log/
+          recurse: no
+          patterns: *.txt
+        register: logs_to_copy
+
     - name: fetch the log folder to the ansible master server.
-      fetch:
-        src: /var/log/update_log/Admin_Server*
-        dest: /home/update_log/
-        flat: yes
-      become: yes
+      - fetch:
+          src: {{ item.path }}
+          dest: /home/update_log/
+          flat: yes
+        with_items: "{{ logs_to_copy.files }}"
+        become: yes
 
 
 
