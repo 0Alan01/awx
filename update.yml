@@ -32,7 +32,7 @@
 
     - name: fetch the log folder to the ansible master server.
       fetch:
-        src: {{ item.path }}
+        src: "{{ item.path }}"
         dest: /home/update_log/
         flat: yes
       with_items: "{{ logs_to_copy.files }}"
