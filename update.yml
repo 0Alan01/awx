@@ -23,10 +23,10 @@
         dest: "/var/log/update_log/{{ inventory_hostname }}_{{ lookup('pipe', 'date +%Y-%m-%d_%H:%M:%S') }}_output.txt"
       become: yes
 
-    - name: rsync the log folder to the ansible master server.
-      copy:
-        src: /var/log/update_log/Admin_Server_2024-03-18_11:19:49_output.txt
-        dest: /home/fintech/update_log/
+    - name: fetch the log folder to the ansible master server.
+      fetch:
+        src: /var/log/update_log/{{ inventory_hostname }}*
+        dest: /home/update_log/
       become: yes
 
 
