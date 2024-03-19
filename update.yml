@@ -25,7 +25,7 @@
 
     - name: fetch the log folder to the ansible master server.
       fetch:
-        src: /var/log/update_log/Admin_Server_2024-03-18_11:19:49_output.txt
+        src: /var/log/update_log/*.txt
         dest: /home/update_log/
         flat: yes
       become: yes
