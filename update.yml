@@ -16,6 +16,7 @@
       register: apt_output
       args:
         warn: false
+      become: yes
     
     - name: Storing the stdout or stderr in /var/log with date and time.
       copy:
